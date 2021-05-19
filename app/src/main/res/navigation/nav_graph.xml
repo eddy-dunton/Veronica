@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/MainMenu">
+
+    <fragment
+        android:id="@+id/MainMenu"
+        android:name="com.eddydunton.veronica.RollMenu"
+        android:label="RollMenu"
+        tools:layout="@layout/fragment_roll_menu">
+
+        <action
+            android:id="@+id/action_MainMenu_to_ViewRoll"
+            app:destination="@id/ViewRoll" />
+    </fragment>
+    <fragment
+        android:id="@+id/ViewRoll"
+        android:name="com.eddydunton.veronica.RollView"
+        android:label="ViewRoll"
+        tools:layout="@layout/fragment_roll_view">
+        <argument
+            android:name="roll_index"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_ViewRoll_to_AddShot"
+            app:destination="@id/AddShot" />
+    </fragment>
+    <fragment
+        android:id="@+id/AddShot"
+        android:name="com.eddydunton.veronica.AddShot"
+        android:label="fragment_add_shot"
+        tools:layout="@layout/fragment_add_shot" />
+</navigation>
